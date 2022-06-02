@@ -21,6 +21,11 @@ module.exports = {
       path: __dirname + "/src/",
       filename: "client.min.js"
     },
+    devServer: {
+      static: {
+        directory: path.join(__dirname, 'src'),
+      },
+    },
     plugins: debug ? [] : [
       new webpack.optimize.OccurrenceOrderPlugin(),
       new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
